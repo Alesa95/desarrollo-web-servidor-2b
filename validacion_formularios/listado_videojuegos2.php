@@ -23,7 +23,10 @@
 
         $nuevo_videojuego = new Videojuego($id_videojuego, $titulo, $pegi, $compania);
         array_push($videojuegos, $nuevo_videojuego);
+        print_r($nuevo_videojuego);
     }
+
+    // function obtenerVideojuegosObjetos("SELECT * FROM videojuegos WHERE pegi=13);
     ?>
     <div class="container">
         <h1>Listado de videojuegos</h1>

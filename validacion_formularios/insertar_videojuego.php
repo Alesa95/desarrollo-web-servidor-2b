@@ -20,6 +20,15 @@
         }
         $temp_compania = depurar($_POST["compania"]);
 
+        //  name, tmp_name, size, type
+        $nombre_fichero = $_FILES["imagen"]["name"];
+        $ruta_temporal = $_FILES["imagen"]["tmp_name"];
+        $formato = $_FILES["imagen"]["type"];
+        //echo $formato;
+        $ruta_final = "imagenes/" . $nombre_fichero;
+
+        move_uploaded_file($ruta_temporal, $ruta_final);
+
         #   Validación id videojuego
         if(strlen($temp_id_videojuego) == 0) {
             $err_id_videojuego = "Campo obligatorio";
@@ -74,7 +83,7 @@
     <div class="container">
         <h1>Nuevo videojuego</h1>
     
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             <div class="mb-3">
                 <label class="form-label">ID Videojuego</label>
                 <input class="form-control" type="text" name="id_videojuego">
@@ -126,6 +135,10 @@
                 <?php 
                 } ?>
             </div>
+            <div class="mb-3">
+                <label class="form-label">Imagen</label>
+                <input class="form-control" type="file" name="imagen">
+            </div>
             <input class="btn btn-primary" type="submit" value="Enviar">
         </form>
 
@@ -136,9 +149,9 @@
             echo "exito!";
 
             $sql = "INSERT INTO videojuegos
-                        (id_videojuego, titulo, pegi, compania)
+                        (id_videojuego, titulo, pegi, compania, imagen)
                         VALUES
-                        ($id_videojuego, '$titulo', '$pegi', '$compania')";
+                        ($id_videojuego, '$titulo', '$pegi', '$compania', '$ruta_final')";
 
             $conexion -> query($sql);
         }
