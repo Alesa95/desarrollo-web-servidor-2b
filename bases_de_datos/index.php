@@ -44,7 +44,7 @@
                     <input class="btn btn-primary" type="submit" value="Buscar">
                 </div>
             </div>
-            <div class="row mb-3">
+            <div class="row mb-3 align-items-center">
                 <div class="col-1">
                     <label class="form-label">Ordenar</label>
                 </div>
@@ -55,7 +55,7 @@
                         <option value="autor">Autor/a</option>
                     </select>
                 </div>
-                <div class="col-2">
+                <div class="col-3">
                     <select class="form-select" name="orden">
                         <option selected value="asc">Ascendente</option>
                         <option selected value="desc">Descendente</option>
@@ -70,6 +70,7 @@
                     <th>Título</th>
                     <th>Páginas</th>
                     <th>Autor/a</th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
