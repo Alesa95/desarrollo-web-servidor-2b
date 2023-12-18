@@ -71,6 +71,7 @@
                     <th>Páginas</th>
                     <th>Autor/a</th>
                     <th></th>
+                    <th></th>
                 </tr>
             </thead>
             <tbody>
@@ -84,6 +85,12 @@
                             <form action="view_book.php" method="GET">
                                 <input type="hidden" name="titulo" value="<?php echo $fila["titulo"] ?>">
                                 <input class="btn btn-secondary" type="submit" value="Ver">
+                            </form>
+                        </td>
+                        <td>
+                            <form action="delete_book.php" method="POST">
+                                <input type="hidden" name="titulo" value="<?php echo $fila["titulo"] ?>">
+                                <input class="btn btn-danger" type="submit" value="Borrar">
                             </form>
                         </td>
                     </tr>
