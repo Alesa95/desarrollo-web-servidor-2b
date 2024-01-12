@@ -16,6 +16,8 @@
                 <th>Número temporada</th>
                 <th>Título temporada</th>
                 <th>Capítulos</th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>

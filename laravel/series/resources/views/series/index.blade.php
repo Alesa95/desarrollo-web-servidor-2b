@@ -15,6 +15,9 @@
                 <th>Título</th>
                 <th>Plataforma</th>
                 <th>Temporadas</th>
+                <th></th>
+                <th></th>
+                <th></th>
             </tr>
         </thead>
         <tbody>
@@ -23,6 +26,23 @@
                     <td>{{ $serie->titulo }}</td>
                     <td>{{ $serie->plataforma }}</td>
                     <td>{{ $serie->temporadas }}</td>
+                    <td>
+                        <form action="{{ route('series.show', ['series' => $serie->id]) }}" method="get">
+                            <input type="submit" value="Ver">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ route('series.edit', ['series' => $serie->id]) }}" method="get">
+                            <input type="submit" value="Editar">
+                        </form>
+                    </td>
+                    <td>
+                        <form action="{{ route('series.destroy', ['series' => $serie->id]) }}" method="post">
+                            @csrf
+                            {{ method_field('DELETE') }}
+                            <input type="submit" value="Borrar">
+                        </form>
+                    </td>
                 </tr>
             @endforeach
         </tbody>

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Serie;
+use DB;
 
 class SerieController extends Controller
 {
@@ -32,7 +33,7 @@ class SerieController extends Controller
      */
     public function create()
     {
-        //
+        return view('series/create');
     }
 
     /**
@@ -40,7 +41,13 @@ class SerieController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $serie = new Serie;
+        $serie -> titulo = $request -> input('titulo');
+        $serie -> plataforma = $request -> input('plataforma');
+        $serie -> temporadas = $request -> input('temporadas');
+        $serie -> save();
+
+        return redirect('/series');
     }
 
     /**
@@ -48,7 +55,8 @@ class SerieController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $serie = Serie::find($id);
+        return view('series/show', ['serie' => $serie]);
     }
 
     /**
@@ -56,7 +64,8 @@ class SerieController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        $serie = Serie::find($id);
+        return view('series/edit', ['serie' => $serie]);
     }
 
     /**
@@ -64,7 +73,14 @@ class SerieController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $serie = Serie::find($id); 
+
+        $serie -> titulo = $request -> input('titulo');
+        $serie -> plataforma = $request -> input('plataforma');
+        $serie -> temporadas = $request -> input('temporadas');
+        $serie -> save();
+
+        return redirect('/series');
     }
 
     /**
@@ -72,6 +88,7 @@ class SerieController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        DB::table('series')->where('id', "=", $id)->delete();
+        return redirect('/series');
     }
 }
