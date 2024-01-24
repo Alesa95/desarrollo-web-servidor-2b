@@ -8,6 +8,10 @@
 <body>
     <h1>Página principal de las series</h1>
     <p>{{ $mensaje }}</p>
+
+    <p>
+        <a href="{{ route('series.create')}}">Nueva serie</a>
+    </p>
     
     <table>
         <thead>
@@ -25,7 +29,7 @@
                 <tr>
                     <td>{{ $serie->titulo }}</td>
                     <td>{{ $serie->plataforma }}</td>
-                    <td>{{ $serie->temporadas }}</td>
+                    <td>{{ $serie->numero_temporadas }}</td>
                     <td>
                         <form action="{{ route('series.show', ['series' => $serie->id]) }}" method="get">
                             <input type="submit" value="Ver">

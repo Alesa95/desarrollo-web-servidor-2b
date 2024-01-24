@@ -15,19 +15,19 @@ class TemporadaSeeder extends Seeder
     {
         DB::table('temporadas')->insert([
             [
-                'titulo_serie' => "Friends", 
+                'serie_id' => 1, 
                 'numero_temporada' => 1, 
                 'titulo_temporada' => "Primera temporada",
                 'numero_capitulos' => 12
             ],
             [
-                'titulo_serie' => "Juego de Tronos", 
+                'serie_id' => 2, 
                 'numero_temporada' => 1, 
                 'titulo_temporada' => "Primera temporada",
                 'numero_capitulos' => 10
             ],
             [
-                'titulo_serie' => "Avatar: La leyenda de Aang", 
+                'serie_id' => 3, 
                 'numero_temporada' => 1, 
                 'titulo_temporada' => "Libro uno: Agua",
                 'numero_capitulos' => 12

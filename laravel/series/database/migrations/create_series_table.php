@@ -15,7 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('titulo');
             $table->string('plataforma');
-            $table->integer('temporadas');
+            $table->integer('numero_temporadas');
             $table->timestamps();
         });
     }

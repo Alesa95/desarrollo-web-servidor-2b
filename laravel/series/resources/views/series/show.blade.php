@@ -9,6 +9,15 @@
 <body>
     <p>Título: {{ $serie -> titulo }}</p>
     <p>Plataforma: {{ $serie -> plataforma }}</p>
-    <p>Temporadas: {{ $serie -> temporadas }}</p>
+    <p>Temporadas: {{ $serie -> numero_temporadas }}</p>
+
+    <ul>
+        @php
+            $temporadas = $serie->temporadas;
+        @endphp
+        @foreach($temporadas as $temporada)
+            <li>{{ $temporada->titulo_temporada }}</li>
+        @endforeach
+    </ul>
 </body>
 </html>

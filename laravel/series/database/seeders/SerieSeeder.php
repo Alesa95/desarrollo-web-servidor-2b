@@ -17,22 +17,22 @@ class SerieSeeder extends Seeder
             [
                 'titulo' => 'La casa de papel', 
                 'plataforma' => 'Netflix', 
-                'temporadas' => 7
+                'numero_temporadas' => 7
             ],
             [
                 'titulo' => 'Suite', 
                 'plataforma' => 'Amazon Prime', 
-                'temporadas' => 3
+                'numero_temporadas' => 3
             ],
             [
                 'titulo' => 'Cómo conocí a vuestra madre', 
                 'plataforma' => 'Netflix', 
-                'temporadas' => 5
+                'numero_temporadas' => 5
             ],
             [
                 'titulo' => 'El plan del diablo', 
                 'plataforma' => 'HBO', 
-                'temporadas' => 4
+                'numero_temporadas' => 4
             ]
         ]);
     }

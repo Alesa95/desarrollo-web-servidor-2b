@@ -23,7 +23,7 @@
         <tbody>
             @foreach($temporadas as $temporada)
                 <tr>
-                    <td>{{ $temporada->titulo_serie }}</td>
+                    <td>{{ $temporada->serie->titulo }}</td>
                     <td>{{ $temporada->numero_temporada }}</td>
                     <td>{{ $temporada->titulo_temporada }}</td>
                     <td>{{ $temporada->numero_capitulos }}</td>
